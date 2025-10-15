@@ -5,7 +5,12 @@
   "scripts": {
     "dev": "node --watch src/index.js",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:studio": "drizzle-kit studio"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +19,7 @@
   "type": "module",
   "devDependencies": {
     "dotenv": "^17.2.3",
+    "drizzle-kit": "^0.31.5",
     "eslint": "^9.37.0",
     "eslint-config-prettier": "^10.1.8",
     "express": "^5.1.0",
@@ -21,6 +27,11 @@
     "install": "^0.13.0",
     "nodemon": "^3.1.10",
     "npm": "^11.6.2",
-    "prettier": "^3.6.2"
+    "prettier": "^3.6.2",
+    "tsx": "^4.20.6"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^1.0.2",
+    "drizzle-orm": "^0.44.6"
   }
 }
