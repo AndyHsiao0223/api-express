@@ -1,0 +1,14 @@
+{"level":"info","message":"Hello world","service":"acquisitions-api","timestamp":"2025-11-03T14:37:24.409Z"}
+{"level":"info","message":"::1 - - [03/Nov/2025:14:37:24 +0000] \"GET / HTTP/1.1\" 304 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"acquisitions-api","timestamp":"2025-11-03T14:37:24.422Z"}
+{"level":"info","message":"::1 - - [03/Nov/2025:14:37:24 +0000] \"GET /favicon.ico HTTP/1.1\" 404 150 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36\"","service":"acquisitions-api","timestamp":"2025-11-03T14:37:24.670Z"}
+{"level":"info","message":"Hello world","service":"acquisitions-api","timestamp":"2025-11-04T15:07:56.100Z"}
+{"level":"info","message":"::1 - - [04/Nov/2025:15:07:56 +0000] \"GET / HTTP/1.1\" 200 13 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2025-11-04T15:07:56.107Z"}
+{"level":"info","message":"::1 - - [05/Nov/2025:00:03:51 +0000] \"GET /api HTTP/1.1\" 200 28 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2025-11-05T00:03:51.775Z"}
+{"level":"info","message":"::1 - - [05/Nov/2025:00:04:47 +0000] \"POST /api/auth/sign-in HTTP/1.1\" 200 31 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2025-11-05T00:04:47.742Z"}
+{"level":"info","message":"::1 - - [12/Nov/2025:07:39:54 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 200 31 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2025-11-12T07:39:54.886Z"}
+{"level":"info","message":"::1 - - [12/Nov/2025:07:43:45 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 400 92 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2025-11-12T07:43:45.684Z"}
+{"level":"info","message":"User registered successfully: andy90.2.23@gmail.com","service":"acquisitions-api","timestamp":"2025-11-12T07:45:04.894Z"}
+{"level":"info","message":"::1 - - [12/Nov/2025:07:45:04 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 201 105 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2025-11-12T07:45:04.895Z"}
+{"level":"info","message":"User andy90.2.24@gmail.com created successfully","service":"acquisitions-api","timestamp":"2025-11-12T15:17:24.120Z"}
+{"level":"info","message":"User registered successfully: andy90.2.24@gmail.com","service":"acquisitions-api","timestamp":"2025-11-12T15:17:24.127Z"}
+{"level":"info","message":"::1 - - [12/Nov/2025:15:17:24 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 201 106 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2025-11-12T15:17:24.130Z"}
