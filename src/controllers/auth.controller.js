@@ -105,3 +105,16 @@ export const signin = async (req, res) => {
     return res.status(500).json({ error: 'Internal server error' });
   }
 };
+
+export const signout = (req, res) => {
+  try {
+    cookies.clear(res, 'token');
+    logger.info('User signed out successfully');
+    return res.status(200).json({
+      message: 'Signout successful',
+    });
+  } catch (e) {
+    logger.error('Signout Error', e);
+    return res.status(500).json({ error: 'Internal server error' });
+  }
+};
