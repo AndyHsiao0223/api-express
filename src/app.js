@@ -9,6 +9,8 @@ import cors from 'cors';
 // middleware to parse cookies from incoming requests
 import cookieParser from 'cookie-parser';
 import authRoutes from '#routes/auth.routes.js';
+// security middleware
+import sicurityMiddleware from '#middleware/sicurity.middleware.js';
 
 const app = express();
 
@@ -25,6 +27,8 @@ app.use(
     },
   })
 );
+
+app.use(sicurityMiddleware);
 
 app.get('/', (req, res) => {
   logger.info('Hello world');
