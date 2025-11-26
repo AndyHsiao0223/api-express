@@ -1,10 +1,11 @@
 import express from 'express';
+import { fetchAllUsers, fetchUserById, updateUserById, deleteUserById } from '#controllers/user.controller.js';
 
 const router = express.Router();
 
-router.get('/', (req, res) => res.send('GET /users'));
-router.get('/:id', (req, res) => res.send('GET /users/:id'));
-router.put('/:id', (req, res) => res.send('PUT /users/:id'));
-router.delete('/:id', (req, res) => res.send('DELETE /users/:id'));
+router.get('/', fetchAllUsers);
+router.get('/:id', fetchUserById);
+router.put('/:id', updateUserById);
+router.delete('/:id', deleteUserById);
 
 export default router;

@@ -19,3 +19,23 @@ export const getAllUsers = async () => {
     throw e;
   }
 };
+
+export const getUserById = async (id) => {
+  try {
+    return await db.select({
+      id: users.id,
+      name: users.name,
+      email: users.email,
+      role: users.role,
+      created_at: users.created_at,
+      updated_at: users.updated_at,
+    }).from(users).where(users.id.equals(id)).first();
+  } catch (e) {
+    logger.error('Error getting user by ID:', e);
+    throw e;
+  }
+};
+
+export const updateUser = async (id, updates) => {};
+
+export const deleteUser = async (id) => {};
