@@ -12,7 +12,7 @@ import authRoutes from '#routes/auth.routes.js';
 // security middleware
 import sicurityMiddleware from '#middleware/sicurity.middleware.js';
 // user CRUD routes
-import userRoutes from '#user/user.routes.js';
+import userRoutes from '#routes/user.routes.js';
 
 const app = express();
 

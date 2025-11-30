@@ -23,7 +23,7 @@ export const getAllUsers = async () => {
 
 export const getUserById = async (id) => {
   try {
-    return await db
+    const result = await db
       .select({
         id: users.id,
         name: users.name,
@@ -33,8 +33,10 @@ export const getUserById = async (id) => {
         updated_at: users.updated_at,
       })
       .from(users)
-      .where(users.id.equals(id))
-      .first();
+      .where(eq(users.id, id))
+      .limit(1);
+
+    return result[0];
   } catch (e) {
     logger.error('Error getting user by ID:', e);
     throw e;
