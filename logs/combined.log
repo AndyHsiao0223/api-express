@@ -104,3 +104,9 @@
 {"level":"info","message":"::1 - - [29/Nov/2025:13:31:58 +0000] \"GET /api/users/1 HTTP/1.1\" 200 198 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2025-11-29T13:31:58.774Z"}
 {"level":"info","message":"deleting user by id: 1 ...","service":"acquisitions-api","timestamp":"2025-11-29T13:32:03.183Z"}
 {"level":"info","message":"::1 - - [29/Nov/2025:13:32:03 +0000] \"DELETE /api/users/1 HTTP/1.1\" 200 196 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2025-11-29T13:32:03.434Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [30/Nov/2025:07:47:04 +0000] \"GET /health HTTP/1.1\" 200 73 \"-\" \"-\"","service":"acquisitions-api","timestamp":"2025-11-30T07:47:04.696Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [30/Nov/2025:07:47:04 +0000] \"GET /api HTTP/1.1\" 200 28 \"-\" \"-\"","service":"acquisitions-api","timestamp":"2025-11-30T07:47:04.732Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [30/Nov/2025:07:47:04 +0000] \"GET /nonexistent HTTP/1.1\" 500 926 \"-\" \"-\"","service":"acquisitions-api","timestamp":"2025-11-30T07:47:04.764Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [30/Nov/2025:07:48:51 +0000] \"GET /health HTTP/1.1\" 200 73 \"-\" \"-\"","service":"acquisitions-api","timestamp":"2025-11-30T07:48:51.182Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [30/Nov/2025:07:48:51 +0000] \"GET /api HTTP/1.1\" 200 28 \"-\" \"-\"","service":"acquisitions-api","timestamp":"2025-11-30T07:48:51.218Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [30/Nov/2025:07:48:51 +0000] \"GET /nonexistent HTTP/1.1\" 404 27 \"-\" \"-\"","service":"acquisitions-api","timestamp":"2025-11-30T07:48:51.245Z"}

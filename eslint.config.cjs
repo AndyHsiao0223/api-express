@@ -13,4 +13,17 @@ module.exports = [
       },
     },
   },
+  // Jest specific rules
+  {
+    files: ['**/*.js'],
+    languageOptions: {
+      globals: {
+        ...globals.jest,
+      },
+    },
+    rules: {
+      'no-unused-vars': 'warn',
+      'no-undef': 'warn',
+    },
+  },
 ];
