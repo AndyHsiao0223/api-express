@@ -110,3 +110,6 @@
 {"level":"info","message":"::ffff:127.0.0.1 - - [30/Nov/2025:07:48:51 +0000] \"GET /health HTTP/1.1\" 200 73 \"-\" \"-\"","service":"acquisitions-api","timestamp":"2025-11-30T07:48:51.182Z"}
 {"level":"info","message":"::ffff:127.0.0.1 - - [30/Nov/2025:07:48:51 +0000] \"GET /api HTTP/1.1\" 200 28 \"-\" \"-\"","service":"acquisitions-api","timestamp":"2025-11-30T07:48:51.218Z"}
 {"level":"info","message":"::ffff:127.0.0.1 - - [30/Nov/2025:07:48:51 +0000] \"GET /nonexistent HTTP/1.1\" 404 27 \"-\" \"-\"","service":"acquisitions-api","timestamp":"2025-11-30T07:48:51.245Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [04/Dec/2025:03:27:33 +0000] \"GET /health HTTP/1.1\" 200 73 \"-\" \"-\"","service":"acquisitions-api","timestamp":"2025-12-04T03:27:33.476Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [04/Dec/2025:03:27:33 +0000] \"GET /api HTTP/1.1\" 200 28 \"-\" \"-\"","service":"acquisitions-api","timestamp":"2025-12-04T03:27:33.515Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [04/Dec/2025:03:27:33 +0000] \"GET /nonexistent HTTP/1.1\" 404 27 \"-\" \"-\"","service":"acquisitions-api","timestamp":"2025-12-04T03:27:33.546Z"}
