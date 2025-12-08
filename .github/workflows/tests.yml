@@ -4,11 +4,9 @@ on:
   push:
     branches:
       - main
-      - staging
   pull_request:
     branches:
       - main
-      - staging
 
 jobs:
   test:
@@ -29,14 +27,13 @@ jobs:
         run: npm ci
 
       - name: Run tests
-        id: tests
         run: |
           echo "::notice::Running test suite..."
           npm test
         env:
           NODE_ENV: test
           NODE_OPTIONS: --experimental-vm-modules
-          DB_URL: ${{ secrets.DB_URL || 'postgresql://test:test@localhost:5432/test_acquisitions' }}
+          DB_URL: ${{ secrets.DB_URL || 'postgresql://test:test@localhost:5432/test' }}
           JWT_SECRET: test-secret-for-ci
           LOG_LEVEL: error
 
@@ -45,33 +42,16 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: coverage-reports
-          path: |
-            coverage/
-            test-results.xml
+          path: coverage/
           retention-days: 30
           if-no-files-found: warn
-
-      - name: Generate test summary
-        if: always()
-        run: |
-          echo "## Test Results 🧪" >> $GITHUB_STEP_SUMMARY
-          if [ "${{ steps.tests.outcome }}" == "success" ]; then
-            echo "✅ All tests passed successfully!" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "### Coverage Status" >> $GITHUB_STEP_SUMMARY
-            echo "Coverage reports have been uploaded as artifacts and retained for 30 days." >> $GITHUB_STEP_SUMMARY
-          else
-            echo "❌ Some tests failed. Please check the logs above for details." >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "### Next Steps" >> $GITHUB_STEP_SUMMARY
-            echo "1. Review the failing test output above" >> $GITHUB_STEP_SUMMARY
-            echo "2. Fix the failing tests locally" >> $GITHUB_STEP_SUMMARY
-            echo "3. Run \`npm test\` locally to verify fixes" >> $GITHUB_STEP_SUMMARY
-            echo "4. Commit and push your changes" >> $GITHUB_STEP_SUMMARY
-          fi
 
       - name: Annotate test failures
         if: failure()
         run: |
           echo "::error::Test suite failed - please check the test output for specific failure details"
           echo "::notice::Run 'npm test' locally to reproduce and debug the failing tests"
+
+      - name: Tests passed
+        if: success()
+        run: echo "::notice::All tests passed! Coverage reports uploaded as artifacts."

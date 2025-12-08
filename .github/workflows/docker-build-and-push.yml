@@ -28,6 +28,7 @@ jobs:
         uses: docker/setup-buildx-action@v3
         with:
           driver: docker-container
+          # Intel/AMD 64-bit and ARM 64-bit(Apple Silicon)
           platforms: linux/amd64,linux/arm64
 
       - name: Log in to Docker Hub
@@ -43,24 +44,18 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
-            # Branch-based tags
             type=ref,event=branch
-            # SHA-based tags
             type=sha,prefix={{branch}}-,format=short
-            # Latest tag for main branch
             type=raw,value=latest,enable={{is_default_branch}}
-            # Production timestamp tag
             type=raw,value=prod-{{date 'YYYYMMDD-HHmmss'}},enable={{is_default_branch}}
-            # Custom suffix if provided
-            type=raw,value={{branch}}${{ inputs.tag_suffix && format('-{0}', inputs.tag_suffix) || '' }},enable=${{ inputs.tag_suffix != '' }}
+            type=raw,value={{branch}}${{ inputs.tag_suffix && format('-{0}', inputs.tag_suffix) || '' }}
           labels: |
-            org.opencontainers.image.title=Acquisitions API
-            org.opencontainers.image.description=Node.js Express API for acquisitions system
-            org.opencontainers.image.vendor=Adrian Hajdin
+            org.opencontainers.image.title=Express API
+            org.opencontainers.image.description=Express API with DevOps CI/CD Pipeline
+            org.opencontainers.image.vendor=Andy Hsiao
             org.opencontainers.image.created={{date 'YYYY-MM-DDTHH:mm:ssZ'}}
 
       - name: Build and push Docker image
-        id: build
         uses: docker/build-push-action@v5
         with:
           context: .
